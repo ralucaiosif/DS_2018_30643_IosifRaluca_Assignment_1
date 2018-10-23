@@ -1,6 +1,13 @@
 package data.dto;
 
+import javax.persistence.*;
+
+@Entity(name = "City")
+@Table(name = "cities")
 public class City {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "city_id", nullable = false)
     private int id;
     private String name;
     private double longitute;

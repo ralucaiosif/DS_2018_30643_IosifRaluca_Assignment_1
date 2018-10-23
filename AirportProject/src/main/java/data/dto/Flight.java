@@ -1,21 +1,34 @@
 package data.dto;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
+@Entity(name = "Flight")
+@Table(name = "flights")
 public class Flight {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @Column(name = "flight_id", nullable = false)
     private int flightNumber;
+
     private AirplaneType airplaneType;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "city_id")
     private City departureCity;
+
     private LocalDate departureDate;
+
     private LocalTime departureHour;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "city_id")
     private City arrivalCity;
+
     private LocalDate arrivalDate;
+
     private LocalTime arrivalHour;
 
     public int getFlightNumber() {

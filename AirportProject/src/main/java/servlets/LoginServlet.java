@@ -19,14 +19,23 @@ public class LoginServlet extends HttpServlet {
         out.println(docType +
                 "<html>\n" +
                 "<body  style=\"background-color:powderblue;\">\n" +
-                "<form action = \"HelloForm\" method = \"GET\">" +
-                "First Name: <input type = \"text\" name = \"first_name\">" +
+                "<form action = \"HelloServlet\" method = \"GET\">" +
+                "Username: <input type = \"text\" name = \"username\">" +
                 "<br />" +
                 "Password: <input type=\"password\" name=\"pwd\">" +
+                "<br />" +
                 "<input type = \"submit\" value = \"Login\" />" +
                 "</form>" +
                 "</body>" +
                 "</html>"
         );
+        System.out.println(request.getParameter("username"));
+        System.out.println(request.getParameter("pwd"));
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        doGet(request, response);
     }
 }
