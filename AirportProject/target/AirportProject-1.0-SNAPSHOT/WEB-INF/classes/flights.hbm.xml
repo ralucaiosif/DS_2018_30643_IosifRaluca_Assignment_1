@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="data.dto.Flight" table="flights">
+        <meta attribute="class-description">
+            This class contains the flight details.
+        </meta>
+        <id name="flightId" type="int" column="flight_id">
+            <generator class="native" />
+        </id>
+        <property name="airplaneType" column="GENDER">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">data.dto.AirplaneType</param>
+            </type>
+        </property>        <property name="departureDate" column="departure_date" type="date"/>
+        <property name="departureHour" column="departure_hour" type="time"/>
+        <property name="arrivalDate" column="arrival_date" type = "date"/>
+        <property name="arrivalHour" column="arrival_hour" type="time"/>
+        <one-to-one name="departureCity" class="data.dto.City" cascade="all"/>
+        <one-to-one name="arrivalHour" class="data.dto.City" cascade="all"/>
+
+    </class>
+</hibernate-mapping>

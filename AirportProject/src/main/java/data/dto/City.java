@@ -2,16 +2,23 @@ package data.dto;
 
 import javax.persistence.*;
 
-@Entity(name = "City")
+@Entity
 @Table(name = "cities")
 public class City {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "city_id", nullable = false)
     private int id;
+
+    @Column(name = "name")
     private String name;
-    private double longitute;
-    private double langitude;
+
+    @Column(name = "longitude")
+    private double longitude;
+
+    @Column(name ="latitude")
+    private double latitude;
 
     public int getId() {
         return id;
@@ -29,19 +36,19 @@ public class City {
         this.name = name;
     }
 
-    public double getLongitute() {
-        return longitute;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLongitute(double longitute) {
-        this.longitute = longitute;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
-    public double getLangitude() {
-        return langitude;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLangitude(double langitude) {
-        this.langitude = langitude;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 }

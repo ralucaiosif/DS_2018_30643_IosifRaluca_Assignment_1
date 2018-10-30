@@ -5,38 +5,44 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity(name = "Flight")
+@Entity
 @Table(name = "flights")
 public class Flight {
-    @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    @Column(name = "flight_id", nullable = false)
-    private int flightNumber;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "flight_id", nullable = false)
+    private int flightId;
+
+    @Enumerated(EnumType.STRING)
     private AirplaneType airplaneType;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "city_id")
+    @OneToOne
+    @Column(name = "departure_city")
     private City departureCity;
 
-    private LocalDate departureDate;
-
-    private LocalTime departureHour;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "city_id")
+    @OneToOne
+    @Column(name = "arrival_city")
     private City arrivalCity;
 
+    @Column(name = "departure_date")
+    private LocalDate departureDate;
+
+    @Column(name = "departure_hour")
+    private LocalTime departureHour;
+
+    @Column(name = "arrival_date")
     private LocalDate arrivalDate;
 
+    @Column(name = "arrival_hour")
     private LocalTime arrivalHour;
 
-    public int getFlightNumber() {
-        return flightNumber;
+    public int getFlightId() {
+        return flightId;
     }
 
-    public void setFlightNumber(int flightNumber) {
-        this.flightNumber = flightNumber;
+    public void setFlightId(int flightId) {
+        this.flightId = flightId;
     }
 
     public AirplaneType getAirplaneType() {
@@ -92,6 +98,6 @@ public class Flight {
     }
 
     public void setArrivalHour(LocalTime arrivalHour) {
-        this.arrivalHour =arrivalHour;
+        this.arrivalHour = arrivalHour;
     }
 }

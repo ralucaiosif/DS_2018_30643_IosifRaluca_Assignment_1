@@ -1,19 +1,13 @@
 package data.dao;
 
 import data.dto.User;
-import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends AbstractDAO implements UserDao {
 
-    private Session session;
-
-    public UserDaoImpl(Session session){
-        this.session = session;
-    }
     @Override
     public User login(String username, String password) {
         User user = getUserByUsername(username);

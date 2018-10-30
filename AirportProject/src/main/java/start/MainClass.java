@@ -1,11 +1,10 @@
 package start;
 
-import data.DBConnection;
+import data.connection.DBConnection;
 import data.dao.UserDao;
 import data.dao.UserDaoImpl;
 import data.dto.Flight;
 import data.dto.User;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -19,14 +18,13 @@ public class MainClass {
         Flight f = new Flight();
         f.setDepartureDate(LocalDate.now());
         System.out.println(f.getDepartureDate());
-        //DBConnection.connect();
-        //factory = new Configuration().configure("resources/hibernate.cfg.xml").buildSessionFactory();
-        Session session = DBConnection.connectToDB();
-        if (session!= null){
+        //Session session = DBConnection.connectToDB();
+        SessionFactory factory = DBConnection.connectToDB();
+        if (factory!= null){
             System.out.println("session opened");
+            UserDao udao = new UserDaoImpl(factory);
+            User user = udao.login("alex", "1234");
         }
-        UserDao udao = new UserDaoImpl(session);
-        User user = udao.login("alex", "1234");
 
     }
 }

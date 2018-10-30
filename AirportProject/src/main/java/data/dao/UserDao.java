@@ -4,5 +4,5 @@ import data.dto.User;
 
 public interface UserDao {
 
-    public User login(String username, String password);
+    User login(String username, String password);
 }

@@ -9,9 +9,10 @@
             This class contains the user details.
         </meta>
         <id name="id" type="int" column="id">
-            <generator class="native" />
+            <generator class="increment" />
         </id>
         <property name="username" column="username" type="string" />
         <property name="password" column="pass" type="string" />
+        <property name="role" column="role" type="string"/>
     </class>
 </hibernate-mapping>
