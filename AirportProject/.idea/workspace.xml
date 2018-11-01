@@ -177,7 +177,11 @@
       </file>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="InvalidCredentialsServlet.java" pinned="false" current-in-tab="false">
@@ -243,6 +247,7 @@
       <find>doct</find>
       <find>/save</find>
       <find>addFlightFor</find>
+      <find>doPO</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -258,7 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/users.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/cities.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/flights.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/java/business/servlets/htmls/HtmlString.java" />
@@ -309,6 +313,7 @@
         <option value="$PROJECT_DIR$/src/main/java/business/servlets/InvalidCredentialsServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -398,73 +403,6 @@
             <path>
               <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="BL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirportProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AirportProject" type="b2602c69:ProjectViewProjectNode" />
@@ -685,7 +623,7 @@
       <workItem from="1540999413101" duration="87000" />
       <workItem from="1541002167917" duration="14391000" />
       <workItem from="1541020938577" duration="9942000" />
-      <workItem from="1541059273195" duration="2089000" />
+      <workItem from="1541059273195" duration="2233000" />
     </task>
     <servers />
   </component>
@@ -695,7 +633,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96651000" />
+    <option name="totallyTimeSpent" value="96795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -722,11 +660,11 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3517018" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3517018" />
       <window_info anchor="bottom" id="Spring" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.42949757" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.42949757" />
       <window_info id="Persistence" order="7" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
       <window_info anchor="right" id="Bean Validation" order="11" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32901135" />
@@ -1208,7 +1146,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
