@@ -43,22 +43,6 @@ public class HelloServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-//        PrintWriter out = response.getWriter();
-//        String docType =
-//                "<!doctype html public \"-//w3c//dtd html 4.0 " +
-//                        "transitional//en\">\n";
-//        out.println( docType +
-//                "<html>" +
-//                "<body>" +
-//                "<form action = \"HelloForm\" method = \"POST\">" +
-//                "Username: <input type = \"text\" name = \"username\">" +
-//                "<br />" +
-//                "Password: <input type = \"text\" name = \"pwd\" />" +
-//                "<input type = \"submit\" value= \"Submit\" />" +
-//                "</form>" +
-//                "</body>" +
-//                "</html>"
-//        );
         doGet(request,response);
     }
 }

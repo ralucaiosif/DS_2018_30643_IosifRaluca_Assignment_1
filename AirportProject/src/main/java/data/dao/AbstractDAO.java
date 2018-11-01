@@ -5,7 +5,7 @@ import org.hibernate.Session;
 
 public abstract class AbstractDAO {
 
-    protected Session session;
+    protected static Session session;
 
     public Session getSession() {
         if (session == null) {

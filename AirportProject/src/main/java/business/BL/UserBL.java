@@ -3,7 +3,6 @@ package business.BL;
 import data.dao.UserDao;
 import data.dao.UserDaoImpl;
 import data.dto.User;
-import org.hibernate.SessionFactory;
 
 public class UserBL {
 

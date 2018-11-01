@@ -1,6 +1,8 @@
 package data.dto;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "cities")
@@ -19,6 +21,9 @@ public class City {
 
     @Column(name ="latitude")
     private double latitude;
+
+    @OneToMany
+    private List<Flight> flights;
 
     public int getId() {
         return id;

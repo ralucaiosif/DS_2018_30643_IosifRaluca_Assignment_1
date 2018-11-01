@@ -15,15 +15,14 @@ public class Flight {
     private int flightId;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "airplane_type")
     private AirplaneType airplaneType;
 
-    @OneToOne
     @Column(name = "departure_city")
-    private City departureCity;
+    private int departureCity;
 
-    @OneToOne
     @Column(name = "arrival_city")
-    private City arrivalCity;
+    private int arrivalCity;
 
     @Column(name = "departure_date")
     private LocalDate departureDate;
@@ -53,11 +52,11 @@ public class Flight {
         this.airplaneType = airplaneType;
     }
 
-    public City getDepartureCity() {
+    public int getDepartureCity() {
         return departureCity;
     }
 
-    public void setDepartureCity(City departureCity) {
+    public void setDepartureCity(int departureCity) {
         this.departureCity = departureCity;
     }
 
@@ -77,11 +76,11 @@ public class Flight {
         this.departureHour = departureHour;
     }
 
-    public City getArrivalCity() {
+    public int getArrivalCity() {
         return arrivalCity;
     }
 
-    public void setArrivalCity(City arrivalCity) {
+    public void setArrivalCity(int arrivalCity) {
         this.arrivalCity = arrivalCity;
     }
 

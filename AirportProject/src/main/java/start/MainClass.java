@@ -1,10 +1,7 @@
 package start;
 
 import data.connection.DBConnection;
-import data.dao.UserDao;
-import data.dao.UserDaoImpl;
 import data.dto.Flight;
-import data.dto.User;
 import org.hibernate.SessionFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -22,8 +19,6 @@ public class MainClass {
         SessionFactory factory = DBConnection.connectToDB();
         if (factory!= null){
             System.out.println("session opened");
-            UserDao udao = new UserDaoImpl(factory);
-            User user = udao.login("alex", "1234");
         }
 
     }

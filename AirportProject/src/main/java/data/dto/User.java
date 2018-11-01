@@ -2,7 +2,7 @@ package data.dto;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name="User")
 @Table(name = "users")
 public class User {
 

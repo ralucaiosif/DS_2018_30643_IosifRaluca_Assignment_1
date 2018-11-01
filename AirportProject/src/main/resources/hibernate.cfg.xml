@@ -13,6 +13,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
-        <mapping resource = "users.hbm.xml"/>
+        <!--<mapping resource = "users.hbm.xml"/>-->
+        <mapping class="data.dto.User" />
+        <mapping class="data.dto.Flight" />
+        <mapping class="data.dto.City" />
     </session-factory>
 </hibernate-configuration>

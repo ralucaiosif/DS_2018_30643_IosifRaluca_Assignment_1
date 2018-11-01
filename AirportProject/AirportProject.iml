@@ -11,7 +11,8 @@
           <root url="file://$MODULE_DIR$/WebContent" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src" />
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -19,6 +20,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="5b09abe0-de26-4d8b-b866-23e463662487" />
+          <unit-entry name="resources:hibernate.cfg.xml" />
           <unit-entry name="src:main:resources:hibernate.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />

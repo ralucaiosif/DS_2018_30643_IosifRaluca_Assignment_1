@@ -25,16 +25,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>AdminServlet</servlet-name>
-        <servlet-class>business.servlets.AdminServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AdminServlet</servlet-name>
-        <url-pattern>/admin</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>UserServlet</servlet-name>
         <servlet-class>business.servlets.UserServlet</servlet-class>
     </servlet>
@@ -42,6 +32,86 @@
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LocalTimeServlet</servlet-name>
+        <servlet-class>business.servlets.LocalTimeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LocalTimeServlet</servlet-name>
+        <url-pattern>/localtime</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserFlightsServlet</servlet-name>
+        <servlet-class>business.servlets.UserFlightsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserFlightsServlet</servlet-name>
+        <url-pattern>/flights</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddFlightServlet</servlet-name>
+        <servlet-class>business.servlets.AddFlightServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddFlightServlet</servlet-name>
+        <url-pattern>/add-flight</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateFlightFormServlet</servlet-name>
+        <servlet-class>business.servlets.UpdateFlightFormServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateFlightFormServlet</servlet-name>
+        <url-pattern>/update-flight</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteFlightServlet</servlet-name>
+        <servlet-class>business.servlets.DeleteFlightServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteFlightServlet</servlet-name>
+        <url-pattern>/delete-flight</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminFlightsServlet</servlet-name>
+        <servlet-class>business.servlets.AdminFlightsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminFlightsServlet</servlet-name>
+        <url-pattern>/admin-flights</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SaveFlightsServlet</servlet-name>
+        <servlet-class>business.servlets.SaveFlightServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SaveFlightsServlet</servlet-name>
+        <url-pattern>/save</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateFlightServlet</servlet-name>
+        <servlet-class>business.servlets.UpdateFlightServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateFlightServlet</servlet-name>
+        <url-pattern>/update</url-pattern>
     </servlet-mapping>
 
 </web-app>

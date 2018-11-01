@@ -1,9 +1,9 @@
 package business.servlets;
 
+import business.BL.CityBL;
+import business.BL.FlightBL;
 import business.BL.UserBL;
-import data.connection.DBConnection;
-import data.dao.UserDao;
-import data.dao.UserDaoImpl;
+import data.dto.Flight;
 import data.dto.User;
 
 import javax.servlet.RequestDispatcher;
@@ -13,17 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        /*String title = "Using GET Method to Read Form Data";
-        String docType =
-                "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-
-        out.println(HtmlString.docType + HtmlString.loginHtml);*/
 
         RequestDispatcher view = request.getRequestDispatcher("/html/login.html");
         // don't add your web-app name to the path
@@ -36,30 +32,79 @@ public class LoginServlet extends HttpServlet {
 
         UserBL userBL = new UserBL();
         String username = request.getParameter("username");
-        String password = request.getParameter("pwd");
+        String password = request.getParameter("password");
         User user = userBL.login(username, password);
-        if (user.getRole().equals("admin")) {
-            //TODO
-            // admin html page -> CRUD on flights
+        if (user == null) {
+            RequestDispatcher view = request.getRequestDispatcher("/html/invalidcredentials.html");
+            view.forward(request, response);
+
+        } else if (user.getRole().equals("admin")) {
+//            FlightBL flightBL = new FlightBL();
+//            ArrayList<Flight> flights = flightBL.findAll();
+//            PrintWriter out = response.getWriter();
+//            out.println(computeAdminPage(flights));
+            RequestDispatcher view = request.getRequestDispatcher("/html/adminpage.html");
+            view.forward(request, response);
         } else {
-            // user html page -> view flights ?
+            RequestDispatcher view = request.getRequestDispatcher("/html/userpage.html");
+            view.forward(request, response);
         }
-        PrintWriter out = response.getWriter();
-        String title = "Welcome Page";
-        String docType =
-                "<!doctype html public \"-//w3c//dtd html 4.0 " +
-                        "transitional//en\">\n";
 
-        out.println(docType +
-                "<html>\n" +
-                "<head><title>" + title + "</title></head>\n" +
+    }
+
+    private String computeAdminPage(ArrayList<Flight> flights) {
+
+        String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+
+        String html = docType +
+                computeHtmlFlightsTable(flights) +
+                "<form action = \"/add-flight\" method = \"post\">\n" +
+                "<input type = \"submit\" value = \"Add flight\">\n" +
+                "</form >" +
+                "<form action = \"/update-flight\" method = \"post\">\n" +
+                "<input type = \"submit\" value = \"Update flight\">\n" +
+                "</form >" +
+                "<form action = \"/delete-flight\" method = \"post\">\n" +
+                "<input type = \"submit\" value = \"Delete flight\">\n" +
+                "</form >\n" +
+                "</body>\n" +
+                "</html>\n";
+        return html;
+    }
+
+
+    private String computeHtmlFlightsTable(ArrayList<Flight> flights) {
+        String html = "<html>\n" +
+                "<head><title>" + "Flights" + "</title></head>\n" +
                 "<body bgcolor = \"#f0f0f0\">\n" +
-                "<h1 align = \"center\">" + "helloo" + "</h1>\n" +
-                "</body>" +
-                "</html>"
-        );
+                "<table stype=\"width:100%\">\n" +
+                "<tr>\n" +
+                "<th> ID </th>\n" +
+                "<th> Airplane type </th>\n" +
+                "<th> Departure city </th>\n" +
+                "<th> Departure day </th>\n" +
+                "<th> Departure hour </th>\n" +
+                "<th> Arrival city </th>\n" +
+                "<th> Arrival day </th>\n" +
+                "<th> Arrival hour </th>\n";
+        CityBL cityBL = new CityBL();
 
+        for (Flight f : flights) {
+            List<String> cityNames = new ArrayList<>();
 
-
+            cityNames.add(cityBL.getCityById(f.getDepartureCity()).getName());
+            cityNames.add(cityBL.getCityById(f.getArrivalCity()).getName());
+            html += "<tr>\n<td>" + f.getFlightId() + "</td>\n" +
+                    "<td>" + f.getAirplaneType().toString() + "</td>\n" +
+                    "<td>" + cityNames.get(0) + "</td>\n" +
+                    "<td>" + f.getDepartureDate().toString() + "</td>\n" +
+                    "<td>" + f.getDepartureHour().toString() + "</td>\n" +
+                    "<td>" + cityNames.get(1) + "</td>\n" +
+                    "<td>" + f.getArrivalDate().toString() + "</td>\n" +
+                    "<td>" + f.getArrivalHour().toString() + "</td>\n" +
+                    "</tr>\n";
+        }
+        html += "</table>\n";
+        return html;
     }
 }

@@ -24,10 +24,11 @@ public class UserDaoImpl extends AbstractDAO implements UserDao {
     }
 
     public User getUserByUsername(String username) {
-        Transaction tx = session.beginTransaction();
+        Transaction tx = getSession().beginTransaction();
         List<User> users = null;
-        Query query = session.createQuery("select u FROM User u  WHERE u.username = :username ");
+        Query query = getSession().createQuery("select u FROM User u  WHERE u.username = :username ");
         query.setParameter("username", username);
+
         users = query.list();
         tx.commit();
         return users != null && !users.isEmpty() ? users.get(0) : null;
