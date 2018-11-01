@@ -35,19 +35,12 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         User user = userBL.login(username, password);
         if (user == null) {
-            RequestDispatcher view = request.getRequestDispatcher("/html/invalidcredentials.html");
-            view.forward(request, response);
-
+            response.sendRedirect("/invalid-credentials");
         } else if (user.getRole().equals("admin")) {
-//            FlightBL flightBL = new FlightBL();
-//            ArrayList<Flight> flights = flightBL.findAll();
-//            PrintWriter out = response.getWriter();
-//            out.println(computeAdminPage(flights));
-            RequestDispatcher view = request.getRequestDispatcher("/html/adminpage.html");
-            view.forward(request, response);
+            response.sendRedirect("/admin-page");
         } else {
-            RequestDispatcher view = request.getRequestDispatcher("/html/userpage.html");
-            view.forward(request, response);
+            response.sendRedirect("/user-page");
+
         }
 
     }

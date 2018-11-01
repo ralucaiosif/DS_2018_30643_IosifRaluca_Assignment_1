@@ -114,4 +114,33 @@
         <url-pattern>/update</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UserPageServlet</servlet-name>
+        <servlet-class>business.servlets.UserPageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserPageServlet</servlet-name>
+        <url-pattern>/user-page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminPageServlet</servlet-name>
+        <servlet-class>business.servlets.AdminPageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminPageServlet</servlet-name>
+        <url-pattern>/admin-page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InvalidCredentialsServlet</servlet-name>
+        <servlet-class>business.servlets.InvalidCredentialsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InvalidCredentialsServlet</servlet-name>
+        <url-pattern>/invalid-credentials</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -7,11 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UserPageServlet extends HttpServlet {
-
+public class InvalidCredentialsServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("/html/userpage.html");
+        RequestDispatcher view = request.getRequestDispatcher("/html/invalidcredentials.html");
         view.forward(request, response);
     }
-
 }
